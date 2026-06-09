@@ -1,1 +1,293 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KT Practice</title>
 
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6fb;
+      color: #222;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .top-title {
+      text-align: center;
+      background: #1f3c88;
+      color: white;
+      padding: 20px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    .sticky-text {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+    }
+
+    .sticky-text h2 {
+      margin-top: 0;
+      color: #1f3c88;
+    }
+
+    .announcement-box {
+      background: #f0f4ff;
+      border-left: 5px solid #1f3c88;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 12px;
+    }
+
+    .question-card {
+      background: white;
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 18px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .question-card h3 {
+      margin-top: 0;
+      color: #222;
+    }
+
+    .option {
+      display: block;
+      margin: 8px 0;
+      padding: 11px;
+      background: #f0f2f5;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .option:hover {
+      background: #e2e7f0;
+    }
+
+    .option input {
+      margin-right: 8px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 12px;
+      background: #1f3c88;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #162d66;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    .correct {
+      border: 2px solid #36b36b;
+      background: #e8f9ef;
+    }
+
+    .wrong {
+      border: 2px solid #e05252;
+      background: #fff0f0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="top-title">
+      <h1>KT Practice Test</h1>
+      <p>Notification / Announcement Text</p>
+    </div>
+
+    <section class="sticky-text">
+      <h2>Announcement</h2>
+
+      <div class="announcement-box">
+        <p><strong>Dear students,</strong></p>
+
+        <p>
+          We would like to inform you that the school library will be closed 
+          on Friday, 15 March, because of maintenance work. 
+          Students who need to borrow or return books should visit the library 
+          before Thursday afternoon.
+        </p>
+
+        <p>
+          The library will open again on Monday, 18 March, at 9:00 a.m. 
+          During this period, students can use the online catalogue to search 
+          for books and learning materials.
+        </p>
+
+        <p>
+          Thank you for your understanding.
+        </p>
+
+        <p><strong>School Administration</strong></p>
+      </div>
+    </section>
+
+    <div class="question-card" data-answer="b">
+      <h3>1. What is the announcement about?</h3>
+
+      <label class="option">
+        <input type="radio" name="q1" value="a"> A school concert
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q1" value="b"> The temporary closing of the library
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q1" value="c"> A new school subject
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q1" value="d"> A sports competition
+      </label>
+    </div>
+
+    <div class="question-card" data-answer="c">
+      <h3>2. Why will the library be closed?</h3>
+
+      <label class="option">
+        <input type="radio" name="q2" value="a"> Because of a meeting
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q2" value="b"> Because of a holiday
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q2" value="c"> Because of maintenance work
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q2" value="d"> Because of an exam
+      </label>
+    </div>
+
+    <div class="question-card" data-answer="a">
+      <h3>3. When should students return or borrow books?</h3>
+
+      <label class="option">
+        <input type="radio" name="q3" value="a"> Before Thursday afternoon
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q3" value="b"> On Friday morning
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q3" value="c"> On Monday evening
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q3" value="d"> After 18 March
+      </label>
+    </div>
+
+    <div class="question-card" data-answer="d">
+      <h3>4. When will the library open again?</h3>
+
+      <label class="option">
+        <input type="radio" name="q4" value="a"> On Thursday, 14 March
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q4" value="b"> On Friday, 15 March
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q4" value="c"> On Sunday, 17 March
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q4" value="d"> On Monday, 18 March
+      </label>
+    </div>
+
+    <div class="question-card" data-answer="b">
+      <h3>5. What can students use while the library is closed?</h3>
+
+      <label class="option">
+        <input type="radio" name="q5" value="a"> The sports hall
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q5" value="b"> The online catalogue
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q5" value="c"> The school bus
+      </label>
+
+      <label class="option">
+        <input type="radio" name="q5" value="d"> The cafeteria
+      </label>
+    </div>
+
+    <button onclick="checkAnswers()">Check Answers</button>
+
+    <div class="result" id="result">Result will appear here</div>
+
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const cards = document.querySelectorAll(".question-card");
+      let score = 0;
+
+      cards.forEach((card, index) => {
+        const correctAnswer = card.dataset.answer;
+        const questionName = "q" + (index + 1);
+        const selected = document.querySelector('input[name="' + questionName + '"]:checked');
+
+        card.classList.remove("correct", "wrong");
+
+        if (selected && selected.value === correctAnswer) {
+          score++;
+          card.classList.add("correct");
+        } else {
+          card.classList.add("wrong");
+        }
+      });
+
+      document.getElementById("result").textContent = "Result: " + score + " / " + cards.length;
+    }
+  </script>
+
+</body>
+</html>
