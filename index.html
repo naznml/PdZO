@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Загвязинский В.И. — Оқыту және тәрбие теориясы</title>
+<title>Теория обучения и воспитания — Загвязинский В.И.</title>
 
 <style>
 *{box-sizing:border-box}
@@ -63,29 +63,6 @@ body{
   opacity:.27;
   white-space:nowrap;
 }
-
-.langSwitch{
-  position:relative;
-  z-index:3;
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-bottom:18px;
-}
-.langSwitch button{
-  border:1px solid rgba(255,255,255,.45);
-  background:rgba(255,255,255,.15);
-  color:#fff;
-  border-radius:999px;
-  padding:9px 18px;
-  font-weight:900;
-  cursor:pointer;
-}
-.langSwitch button.active{
-  background:#fff;
-  color:#3730a3;
-}
-
 .book{
   display:inline-block;
   background:rgba(255,255,255,.17);
@@ -403,31 +380,27 @@ h2{
 </div>
 
 <section class="hero">
-  <div class="langSwitch">
-    <button id="kkBtn" class="active" onclick="setLang('kk')">Қазақша</button>
-    <button id="ruBtn" onclick="setLang('ru')">Русский</button>
+  <div class="book">Педагогика / Педагогика</div>
+
+  <h1>Загвязинский В.И., Емельянова И.Н.<br>Теория обучения и воспитания</h1>
+
+  <div class="subtitle">
+    Магистратураға түсуге арналған педагогика бойынша дайындық сайты / Подготовительный сайт по педагогике для поступления в магистратуру
   </div>
 
-  <div class="book" id="heroBook">Педагогика</div>
-
-  <h1 id="heroTitle">Загвязинский В.И., Емельянова И.Н.<br>Оқыту және тәрбие теориясы</h1>
-
-  <div class="subtitle" id="heroSubtitle">
-    Магистратураға түсуге арналған педагогика бойынша дайындық сайты
-  </div>
-
-  <div class="notice" id="heroNotice">
+  <div class="notice">
     © @elnazm_ln (Назерке)<br>
     Бұл сайттың ресми авторы — @elnazm_ln (Назерке). Бұл материалды тек автордың өзі ғана сата алады. Егер бұл тестті сізге басқа адам сатса, маған жазыңыз.
-    <div class=\"pay\">Төлем: Kaspi, Halyk, Freedom — НАЗЕРКЕ М.</div>
+    <small>Официальный автор сайта — @elnazm_ln (Назерке). Продавать данный материал может только автор. Если этот тест вам продал другой человек, напишите мне.</small>
+    <div class="pay">Төлем / Оплата: Kaspi, Halyk, Freedom — НАЗЕРКЕ М.</div>
   </div>
 
-  <div class="booksrc" id="heroSource">
-    <b>Кітап:</b> Загвязинский В.И., Емельянова И.Н. Теория обучения и воспитания: учебник и практикум для академического бакалавриата. 2-е изд., перераб. и доп. Москва: Юрайт, 2017. 230 с.
+  <div class="booksrc">
+    <b>Кітап / Книга:</b> Загвязинский В.И., Емельянова И.Н. Теория обучения и воспитания: учебник и практикум для академического бакалавриата. 2-е изд., перераб. и доп. Москва: Юрайт, 2017. 230 с.
   </div>
 
-  <div class="specbox" id="heroFormat">
-    <b>КТ форматы:</b> 30 сұрақ. Бір дұрыс жауап. A — 9, B — 12, C — 9.
+  <div class="specbox">
+    <b>КТ форматы / Формат КТ:</b> 30 сұрақ / 30 вопросов. Бір дұрыс жауап / Один правильный ответ. A — 9, B — 12, C — 9.
   </div>
 </section>
 
@@ -1052,91 +1025,31 @@ function sameAnswers(selected, correct){
   return true;
 }
 
-const UI = {
-  kk:{
-    book:"Педагогика",
-    title:"Загвязинский В.И., Емельянова И.Н.<br>Оқыту және тәрбие теориясы",
-    subtitle:"Магистратураға түсуге арналған педагогика бойынша дайындық сайты",
-    notice:"© @elnazm_ln (Назерке)<br>Бұл сайттың ресми авторы — @elnazm_ln (Назерке). Бұл материалды тек автордың өзі ғана сата алады. Егер бұл тестті сізге басқа адам сатса, маған жазыңыз.<div class=\"pay\">Төлем: Kaspi, Halyk, Freedom — НАЗЕРКЕ М.</div>",
-    source:"<b>Кітап:</b> Загвязинский В.И., Емельянова И.Н. Теория обучения и воспитания: учебник и практикум для академического бакалавриата. 2-е изд., перераб. и доп. Москва: Юрайт, 2017. 230 с.",
-    format:"<b>КТ форматы:</b> 30 сұрақ. Бір дұрыс жауап. A — 9, B — 12, C — 9.",
-    block:"блок", final:"Жалпы нәтиже", summaryTitle:"Қысқаша мазмұны", keyTitle:"Маңызды ұғымдар", testTitle:"Тест сұрақтары",
-    level:"Деңгей", one:"бір дұрыс жауап", showBlock:"Блок нәтижесін көрсету", showAll:"Жалпы нәтижені көрсету",
-    totalTitle:"Жалпы нәтиже", totalText:"Барлық 30 сұрақ бойынша нәтижені көру үшін төмендегі батырманы басыңыз.",
-    correct:"Дұрыс", wrong:"Қате", your:"Сіздің жауабыңыз", correctAnswer:"Дұрыс жауап", explanation:"Түсіндірме", sourceLabel:"Дереккөз",
-    notSelected:"Жауап таңдалмаған", scoreWord:"дұрыс", result:"Нәтиже", blockOne:"Бұл блокта әр сұрақта бір дұрыс жауап бар.",
-    formatLine:"КТ форматына сай: 30 сұрақ, әр сұрақта 5 жауап нұсқасы және 1 дұрыс жауап.",
-    footer:"© @elnazm_ln (Назерке)<br>Бұл сайттың ресми авторы — @elnazm_ln (Назерке).<br>Төлем: Kaspi, Halyk, Freedom — НАЗЕРКЕ М.<br><br>Кітап: Загвязинский В.И., Емельянова И.Н. Теория обучения и воспитания. Москва: Юрайт, 2017."
-  },
-  ru:{
-    book:"Педагогика",
-    title:"Загвязинский В.И., Емельянова И.Н.<br>Теория обучения и воспитания",
-    subtitle:"Подготовительный сайт по педагогике для поступления в магистратуру",
-    notice:"© @elnazm_ln (Назерке)<br>Официальный автор сайта — @elnazm_ln (Назерке). Продавать данный материал может только автор. Если этот тест вам продал другой человек, напишите мне.<div class=\"pay\">Оплата: Kaspi, Halyk, Freedom — НАЗЕРКЕ М.</div>",
-    source:"<b>Книга:</b> Загвязинский В.И., Емельянова И.Н. Теория обучения и воспитания: учебник и практикум для академического бакалавриата. 2-е изд., перераб. и доп. Москва: Юрайт, 2017. 230 с.",
-    format:"<b>Формат КТ:</b> 30 вопросов. Один правильный ответ. A — 9, B — 12, C — 9.",
-    block:"блок", final:"Общий результат", summaryTitle:"Краткое содержание", keyTitle:"Важные понятия", testTitle:"Тестовые вопросы",
-    level:"Уровень", one:"один правильный ответ", showBlock:"Показать результат блока", showAll:"Показать общий результат",
-    totalTitle:"Общий результат", totalText:"Чтобы увидеть результат по всем 30 вопросам, нажмите кнопку ниже.",
-    correct:"Верно", wrong:"Неверно", your:"Ваш ответ", correctAnswer:"Правильный ответ", explanation:"Объяснение", sourceLabel:"Источник",
-    notSelected:"Ответ не выбран", scoreWord:"верно", result:"Результат", blockOne:"В этом блоке в каждом вопросе один правильный ответ.",
-    formatLine:"По формату КТ: 30 вопросов, в каждом вопросе 5 вариантов ответа и 1 правильный ответ.",
-    footer:"© @elnazm_ln (Назерке)<br>Официальный автор сайта — @elnazm_ln (Назерке).<br>Оплата: Kaspi, Halyk, Freedom — НАЗЕРКЕ М.<br><br>Книга: Загвязинский В.И., Емельянова И.Н. Теория обучения и воспитания. Москва: Юрайт, 2017."
-  }
-};
-
-let currentLang = "kk";
-
-function t(){ return UI[currentLang]; }
-function val(obj, suffix){ return obj[suffix + (currentLang === "kk" ? "K" : "R")]; }
-function keyText(k){
-  const left = k[0].split(" / ");
-  const right = k[1].split(" / ");
-  return `<b>${currentLang === "kk" ? left[0] : (left[1] || left[0])}</b><br>${currentLang === "kk" ? right[0] : (right[1] || right[0])}`;
+function optText(opt){
+  return `<b>${opt.k}</b> <span class="sep">❖</span> <span class="ruOpt">${opt.r}</span>`;
 }
-function cleanSource(src){
-  if(currentLang === "kk") return src.split(" / Источник:")[0].replace("Дереккөз / Источник:","Дереккөз:");
-  const parts = src.split(" / Источник:");
-  return "Источник:" + (parts[1] || src.replace("Дереккөз / Источник:",""));
+
+function plainOptText(opt){
+  return `${opt.k} ❖ ${opt.r}`;
 }
-function optText(opt){ return currentLang === "kk" ? opt.k : opt.r; }
-function plainOptText(opt){ return currentLang === "kk" ? opt.k : opt.r; }
 
 function getAllQuestions(){
   let list=[];
   DATA.forEach((block,bi)=>{
-    block.questions.forEach((q,qi)=> list.push({block,bi,q,qi}));
+    block.questions.forEach((q,qi)=>{
+      list.push({block,bi,q,qi});
+    });
   });
   return list;
 }
 
-function updateStaticText(){
-  document.documentElement.lang = currentLang;
-  document.title = currentLang === "kk" ? "Загвязинский В.И. — Оқыту және тәрбие теориясы" : "Загвязинский В.И. — Теория обучения и воспитания";
-  document.getElementById("kkBtn").classList.toggle("active", currentLang === "kk");
-  document.getElementById("ruBtn").classList.toggle("active", currentLang === "ru");
-  document.getElementById("heroBook").innerHTML = t().book;
-  document.getElementById("heroTitle").innerHTML = t().title;
-  document.getElementById("heroSubtitle").innerHTML = t().subtitle;
-  document.getElementById("heroNotice").innerHTML = t().notice;
-  document.getElementById("heroSource").innerHTML = t().source;
-  document.getElementById("heroFormat").innerHTML = t().format;
-}
-
-function setLang(lang){
-  currentLang = lang;
-  updateStaticText();
-  render();
-}
-
 function render(){
-  updateStaticText();
   const nav=document.getElementById("nav");
   const app=document.getElementById("app");
 
   nav.innerHTML=DATA.map((block,i)=>`
-    <a href="#${block.id}">${i+1}-${t().block}</a>
-  `).join("") + `<a href="#final">${t().final}</a>`;
+    <a href="#${block.id}">${i+1}-блок</a>
+  `).join("") + `<a href="#final">Жалпы нәтиже</a>`;
 
   app.innerHTML=DATA.map((block,bi)=>{
     const questionsHTML=block.questions.map((item,qi)=>{
@@ -1146,10 +1059,11 @@ function render(){
       return `
         <div class="q">
           <div class="qtag">
-            ${t().level}: ${item.level} | ${t().one}
+            Деңгей / Уровень: ${item.level} | бір дұрыс жауап / один правильный ответ
           </div>
 
-          <div class="qtitle">${qi+1}. ${currentLang === "kk" ? item.qK : item.qR}</div>
+          <div class="qtitle">${qi+1}. ${item.qK}</div>
+          <div class="qru">${item.qR}</div>
 
           ${item.options.map((opt,oi)=>`
             <label class="opt">
@@ -1159,7 +1073,7 @@ function render(){
           `).join("")}
 
           <div class="der">
-            ${cleanSource(item.source)}
+            ${item.source}
           </div>
         </div>
       `;
@@ -1168,40 +1082,54 @@ function render(){
     return `
       <section class="card" id="${block.id}">
         <div class="head">
-          <h2>${currentLang === "kk" ? block.titleK : block.titleR}</h2>
-          <div class="desc">${currentLang === "kk" ? block.descK : block.descR}</div>
-        </div>
-
-        <div class="summarybox">
-          <h3>${t().summaryTitle}</h3>
-          <p>${currentLang === "kk" ? block.summaryK : block.summaryR}</p>
-        </div>
-
-        <div class="keybox">
-          <h3>${t().keyTitle}</h3>
-          <div class="grid">
-            ${block.keys.map(k=>`<div class="pill">${keyText(k)}</div>`).join("")}
+          <h2>${block.titleK}</h2>
+          <div class="ruTitle">${block.titleR}</div>
+          <div class="desc">
+            <b>Қазақша:</b> ${block.descK}
+            <div class="ruText"><b>Русский:</b> ${block.descR}</div>
           </div>
         </div>
 
-        <h3 style="color:#3730a3;margin-top:24px;">${t().testTitle}</h3>
+        <div class="summarybox">
+          <h3>Қысқаша мазмұны / Краткое содержание</h3>
+          <p>${block.summaryK}</p>
+          <div class="ruText">${block.summaryR}</div>
+        </div>
+
+        <div class="keybox">
+          <h3>Маңызды ұғымдар / Важные понятия</h3>
+          <div class="grid">
+            ${block.keys.map(k=>`<div class="pill"><b>${k[0]}</b><br>${k[1]}</div>`).join("")}
+          </div>
+        </div>
+
+        <h3 style="color:#3730a3;margin-top:24px;">Тест сұрақтары / Тестовые вопросы</h3>
 
         ${questionsHTML}
 
-        <button class="btn" onclick="checkBlock(${bi})">${t().showBlock}</button>
+        <button class="btn" onclick="checkBlock(${bi})">
+          Блок нәтижесін көрсету / Показать результат блока
+        </button>
 
         <div class="result" id="result-${bi}"></div>
       </section>
     `;
   }).join("") + `
     <section class="totalBox" id="final">
-      <h2>${t().totalTitle}</h2>
-      <p>${t().totalText}</p>
-      <button class="btn" onclick="checkAll()">${t().showAll}</button>
+      <h2>Жалпы нәтиже / Общий результат</h2>
+      <p>Барлық 30 сұрақ бойынша нәтижені көру үшін төмендегі батырманы басыңыз.</p>
+      <p>Чтобы увидеть результат по всем 30 вопросам, нажмите кнопку ниже.</p>
+      <button class="btn" onclick="checkAll()">Жалпы нәтижені көрсету / Показать общий результат</button>
       <div class="result" id="total-result"></div>
     </section>
 
-    <div class="footer">${t().footer}</div>
+    <div class="footer">
+      © @elnazm_ln (Назерке)<br>
+      Бұл сайттың ресми авторы — @elnazm_ln (Назерке).<br>
+      Официальный автор сайта — @elnazm_ln (Назерке).<br>
+      Төлем / Оплата: Kaspi, Halyk, Freedom — НАЗЕРКЕ М.<br><br>
+      Кітап / Книга: Загвязинский В.И., Емельянова И.Н. Теория обучения и воспитания. Москва: Юрайт, 2017.
+    </div>
   `;
 }
 
@@ -1224,7 +1152,7 @@ function checkBlock(bi){
           const found=item.options.find(o=>o.id===id);
           return `${i+1}) ${found ? plainOptText(found) : id}`;
         }).join("<br>")
-      : t().notSelected;
+      : "Жауап таңдалмаған / Ответ не выбран";
 
     const correctText=item.a.map((id,i)=>{
       const found=item.options.find(o=>o.id===id);
@@ -1233,14 +1161,37 @@ function checkBlock(bi){
 
     html+=`
       <div class="ans ${ok ? "ok" : "bad"}">
-        <div><b>${qi+1}. ${currentLang === "kk" ? item.qK : item.qR}</b></div>
+        <div><b>${qi+1}. ${item.qK}</b></div>
+        <div style="color:#be185d;font-weight:800;">${item.qR}</div>
 
-        <div class="${ok ? "oktxt" : "badtxt"}">${ok ? t().correct : t().wrong}</div>
+        <div class="${ok ? "oktxt" : "badtxt"}">
+          ${ok ? "Дұрыс / Верно" : "Қате / Неверно"}
+        </div>
 
-        <div class="ex"><b>${t().your}:</b><br>${selectedText}</div>
-        <div class="ex"><b>${t().correctAnswer}:</b><br>${correctText}</div>
-        <div class="ex"><b>${t().explanation}:</b><br>${currentLang === "kk" ? item.exK : item.exR}</div>
-        <div class="ex"><b>${t().sourceLabel}:</b><br>${cleanSource(item.source).replace(/^Дереккөз:\s*|^Источник:\s*/,"")}</div>
+        <div class="ex">
+          <b>Сіздің жауабыңыз / Ваш ответ:</b><br>
+          ${selectedText}
+        </div>
+
+        <div class="ex">
+          <b>Дұрыс жауап / Правильный ответ:</b><br>
+          ${correctText}
+        </div>
+
+        <div class="ex">
+          <b>Түсіндірме:</b><br>
+          ${item.exK}
+        </div>
+
+        <div class="ex">
+          <b>Объяснение:</b><br>
+          ${item.exR}
+        </div>
+
+        <div class="ex">
+          <b>Дереккөз / Источник:</b><br>
+          ${item.source.replace("Дереккөз / Источник: ","")}
+        </div>
       </div>
     `;
   });
@@ -1249,14 +1200,18 @@ function checkBlock(bi){
 
   box.innerHTML=`
     <div class="summary">
-      <h3>${score} / ${block.questions.length} ${t().scoreWord}</h3>
-      <p>${t().result}: <b>${percent}%</b></p>
-      <p>${t().blockOne}</p>
+      <h3>${score} / ${block.questions.length} дұрыс / верно</h3>
+      <p>Нәтиже / Результат: <b>${percent}%</b></p>
+      <p>Бұл блокта әр сұрақта тек бір дұрыс жауап бар.</p>
+      <p>В этом блоке в каждом вопросе только один правильный ответ.</p>
     </div>
     ${html}
   `;
 
-  box.scrollIntoView({behavior:"smooth", block:"start"});
+  box.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
 }
 
 function checkAll(){
@@ -1290,7 +1245,7 @@ function checkAll(){
           const found=item.options.find(o=>o.id===id);
           return `${i+1}) ${found ? plainOptText(found) : id}`;
         }).join("<br>")
-      : t().notSelected;
+      : "Жауап таңдалмаған / Ответ не выбран";
 
     const correctText=item.a.map((id,i)=>{
       const found=item.options.find(o=>o.id===id);
@@ -1299,12 +1254,33 @@ function checkAll(){
 
     html+=`
       <div class="ans ${ok ? "ok" : "bad"}">
-        <div><b>${idx+1}. ${currentLang === "kk" ? item.qK : item.qR}</b></div>
-        <div class="qtag">${t().level}: ${item.level}</div>
-        <div class="${ok ? "oktxt" : "badtxt"}">${ok ? t().correct : t().wrong}</div>
-        <div class="ex"><b>${t().your}:</b><br>${selectedText}</div>
-        <div class="ex"><b>${t().correctAnswer}:</b><br>${correctText}</div>
-        <div class="ex"><b>${t().explanation}:</b><br>${currentLang === "kk" ? item.exK : item.exR}</div>
+        <div><b>${idx+1}. ${item.qK}</b></div>
+        <div style="color:#be185d;font-weight:800;">${item.qR}</div>
+        <div class="qtag">Деңгей / Уровень: ${item.level}</div>
+
+        <div class="${ok ? "oktxt" : "badtxt"}">
+          ${ok ? "Дұрыс / Верно" : "Қате / Неверно"}
+        </div>
+
+        <div class="ex">
+          <b>Сіздің жауабыңыз / Ваш ответ:</b><br>
+          ${selectedText}
+        </div>
+
+        <div class="ex">
+          <b>Дұрыс жауап / Правильный ответ:</b><br>
+          ${correctText}
+        </div>
+
+        <div class="ex">
+          <b>Түсіндірме:</b><br>
+          ${item.exK}
+        </div>
+
+        <div class="ex">
+          <b>Объяснение:</b><br>
+          ${item.exR}
+        </div>
       </div>
     `;
   });
@@ -1314,17 +1290,21 @@ function checkAll(){
 
   box.innerHTML=`
     <div class="summary">
-      <h3>${score} / ${all.length} ${t().scoreWord}</h3>
-      <p>${t().totalTitle}: <b>${percent}%</b></p>
-      <p><b>${t().level} A:</b> ${aOk} / ${aCount}</p>
-      <p><b>${t().level} B:</b> ${bOk} / ${bCount}</p>
-      <p><b>${t().level} C:</b> ${cOk} / ${cCount}</p>
-      <p>${t().formatLine}</p>
+      <h3>${score} / ${all.length} дұрыс / верно</h3>
+      <p>Жалпы нәтиже / Общий результат: <b>${percent}%</b></p>
+      <p><b>A деңгей / уровень A:</b> ${aOk} / ${aCount}</p>
+      <p><b>B деңгей / уровень B:</b> ${bOk} / ${bCount}</p>
+      <p><b>C деңгей / уровень C:</b> ${cOk} / ${cCount}</p>
+      <p>КТ форматына сай: 30 сұрақ, әр сұрақта 5 жауап нұсқасы және 1 дұрыс жауап.</p>
+      <p>По формату КТ: 30 вопросов, в каждом вопросе 5 вариантов ответа и 1 правильный ответ.</p>
     </div>
     ${html}
   `;
 
-  box.scrollIntoView({behavior:"smooth", block:"start"});
+  box.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
 }
 
 render();
